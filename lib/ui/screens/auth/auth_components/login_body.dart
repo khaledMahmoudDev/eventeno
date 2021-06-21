@@ -5,10 +5,14 @@ class LoginBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('login'),
-      ),
+    return Stack(
+      children: [
+        Image.asset(
+          'assets/images/bg.png',
+          width: double.infinity,
+          fit: BoxFit.fill,
+        )
+      ],
     );
   }
 }
