@@ -1,3 +1,4 @@
+import 'package:eventeno/ui/screens/home/home_components/home_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,6 +6,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Home'),
+      ),
+      body: HomeBody(),
+    );
   }
 }

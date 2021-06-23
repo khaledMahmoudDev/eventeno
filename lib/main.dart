@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'constants/colors.dart';
 import 'ui/screens/auth/login_screen.dart';
+import 'view_models/event_viewmodel.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,13 +13,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Eventeno',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [Provider(create: (_) => EventsViewModel())],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Eventeno',
+        theme: ThemeData(
+          appBarTheme: AppBarTheme(color: kPrimaryColor),
+          primarySwatch: Colors.red,
+        ),
+        home: LoginScreen(),
       ),
-      home: LoginScreen(),
     );
   }
 }
-

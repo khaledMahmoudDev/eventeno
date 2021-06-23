@@ -1,8 +1,10 @@
 import 'package:eventeno/constants/colors.dart';
+import 'package:eventeno/ui/components/custom_button.dart';
+import 'package:eventeno/ui/screens/home/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'input_field_text.dart';
+import '../../../components/input_field_text.dart';
 
 class LoginBody extends StatelessWidget {
   const LoginBody({Key key}) : super(key: key);
@@ -46,19 +48,13 @@ class LoginBody extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 20),
-                child: Container(
-                  height: 60,
-                  width: double.infinity,
-                  child: FlatButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Login',
-                        style: TextStyle(color: Colors.white),
-                      )),
-                  decoration: BoxDecoration(
-                    color: kPrimaryLightColor,
-                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                  ),
+                child: CustomButton(
+                  title: 'Login',
+                  onPressed: () {
+                    Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (context) => HomeScreen()),
+                        (route) => false);
+                  },
                 ),
               )
             ],

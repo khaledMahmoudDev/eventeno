@@ -13,7 +13,7 @@ class InputFieldText extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: kPrimaryLightColor),
+          borderSide: BorderSide(color: kPrimaryColor),
         ),
       ),
     );

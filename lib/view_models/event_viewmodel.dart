@@ -11,9 +11,9 @@ final List<String> date = [
 
 class EventsViewModel {
   List<Event> events = [
-    Event('assets/images/eve1', 'Riyadh winter wonderland', 36542, 25461, date,
+    Event('assets/images/eve1.png', 'Riyadh winter wonderland', 36542, 25461, date,
         time, categories),
-    Event('assets/images/eve1', 'كرنفال الرعب Hunted House', 36542, 25461, date,
+    Event('assets/images/eve2.png', 'Hunted House Carnival', 36542, 25461, date,
         time, categories),
   ];
 }
