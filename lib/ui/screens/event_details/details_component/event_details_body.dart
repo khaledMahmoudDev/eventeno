@@ -48,7 +48,29 @@ class EventDetailsBody extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: DropDownField(title: 'Date'),
+              child: DropDownField(
+                title: 'Date',
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (_) => AlertDialog(
+                            content:
+                                Container(
+                                    decoration: BoxDecoration(
+                                      color: kPrimaryColor,
+                                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                    ),
+                                  height: 300,
+                                    child: Column(
+                                      children: [
+                                        Text('Date'),
+                                        Divider(height:1 ,color: kChipColorTitle,),
+                                        Text('This is my content'),
+                                      ],
+                                    )),
+                          ));
+                },
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -56,7 +78,9 @@ class EventDetailsBody extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: DropDownField(title: 'Category',),
+              child: DropDownField(
+                title: 'Category',
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
