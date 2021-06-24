@@ -1,4 +1,5 @@
 import 'package:eventeno/ui/components/custom_app_bar.dart';
+import 'package:eventeno/ui/components/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 import 'ticket_log_component/ticket_log_body.dart';
@@ -13,6 +14,7 @@ class TicketLogScreen extends StatelessWidget {
         isHome: false,
         title: 'Ticket Log',
       ),
+      endDrawer: CustomDrawer(),
       body: TicketLogBody(),
     );
   }

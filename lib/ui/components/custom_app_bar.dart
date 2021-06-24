@@ -32,12 +32,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ):Text(''),
       centerTitle: true,
       title: Text(title),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Icon(Icons.dehaze_rounded),
-        )
-      ],
+      // actions: [
+      //   Padding(
+      //     padding: const EdgeInsets.all(8.0),
+      //     child: Icon(Icons.dehaze_rounded),
+      //   )
+      // ],
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:eventeno/ui/components/custom_app_bar.dart';
+import 'package:eventeno/ui/components/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 import 'scan_result_component/accepted_result_body.dart';
@@ -15,6 +16,7 @@ class ScanResultScreen extends StatelessWidget {
         isHome: false,
         title: acceptedTicket? 'Ticket Accepted':'Ticket Rejected',
       ),
+      endDrawer: CustomDrawer(),
       body:acceptedTicket? ScanResultAcceptedBody():ScanResultRejectedBody(),
 
     );
