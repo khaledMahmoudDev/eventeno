@@ -16,7 +16,7 @@ class ScanResultScreen extends StatelessWidget {
         isHome: false,
         title: acceptedTicket? 'Ticket Accepted':'Ticket Rejected',
       ),
-      endDrawer: CustomDrawer(),
+      endDrawer: CustomDrawer(currentPage: 'scan',),
       body:acceptedTicket? ScanResultAcceptedBody():ScanResultRejectedBody(),
 
     );

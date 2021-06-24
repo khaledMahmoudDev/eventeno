@@ -14,7 +14,7 @@ class TicketLogScreen extends StatelessWidget {
         isHome: false,
         title: 'Ticket Log',
       ),
-      endDrawer: CustomDrawer(),
+      endDrawer: CustomDrawer(currentPage: 'log',),
       body: TicketLogBody(),
     );
   }

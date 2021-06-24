@@ -1,9 +1,12 @@
 import 'package:eventeno/constants/colors.dart';
+import 'package:eventeno/data_models/ticket_status.dart';
 import 'package:eventeno/ui/components/custom_button.dart';
 import 'package:eventeno/ui/components/custom_button_with_icon.dart';
 import 'package:eventeno/view_models/status_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'ticket_log_litst_row_item.dart';
 
 class TicketLogBody extends StatelessWidget {
   const TicketLogBody({Key key}) : super(key: key);
@@ -30,7 +33,7 @@ class TicketLogBody extends StatelessWidget {
                 height: 16,
               ),
               Text(
-                'TICKET NO.: 15131561056165743165165',
+                '15131561056165743165165',
                 style: TextStyle(fontSize: 12, color: kGrayTextColor),
               ),
               SizedBox(
@@ -40,6 +43,7 @@ class TicketLogBody extends StatelessWidget {
                 width: 150,
                 child: CustomButton(
                   title: 'Search',
+                  enabled: true,
                   onPressed: () {},
                 ),
               ),
@@ -51,50 +55,9 @@ class TicketLogBody extends StatelessWidget {
                   child: ListView.builder(
                       itemCount: statusList.length,
                       itemBuilder: (context, index) {
-                        return Container(
-                          color: kGrayBackGround,
-                          margin: EdgeInsets.symmetric(horizontal: 8),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset('assets/images/statusicon.png'),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          statusList[index].status
-                                              ? 'Status: Approved'
-                                              : 'Status: Approved',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: statusList[index].status
-                                                  ? kApprovedTextColor
-                                                  : kRejectedTextColor),
-                                        ),
-                                        Text(statusList[index].date)
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                              index == statusList.length - 1
-                                  ? SizedBox(
-                                      height: 1,
-                                    )
-                                  : Padding(
-                                      padding: const EdgeInsets.only(
-                                          top: 8.0, left: 45, right: 45),
-                                      child: Divider(
-                                        height: 2,
-                                        color: kChipColorTitle.withOpacity(.13),
-                                      ),
-                                    )
-                            ],
-                          ),
+                        return TicketLogListRowElement(
+                          statusList: statusList,
+                          index: index,
                         );
                       }),
                 ),
@@ -110,7 +73,7 @@ class TicketLogBody extends StatelessWidget {
                     Icons.arrow_back_ios_outlined,
                     color: Colors.white,
                   ),
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.of(context).pop();
                   },
                 ),

@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String title;
   final Function onPressed;
-
+  final bool enabled;
   const CustomButton({
     Key key,
     this.title,
-    this.onPressed,
+    this.onPressed, this.enabled,
   }) : super(key: key);
 
   @override
@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           )),
       decoration: BoxDecoration(
-        color: kPrimaryColor,
+        color: enabled?kPrimaryColor: kPrimaryColor.withOpacity(.5),
         borderRadius: BorderRadius.all(Radius.circular(15.0)),
       ),
     );

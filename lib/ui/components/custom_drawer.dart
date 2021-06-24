@@ -1,8 +1,14 @@
+import 'package:eventeno/ui/screens/auth/login_screen.dart';
+import 'package:eventeno/ui/screens/home/home_screen.dart';
+import 'package:eventeno/ui/screens/ticket_log/ticket_log_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
+  final String currentPage;
+
   const CustomDrawer({
     Key key,
+    @required this.currentPage,
   }) : super(key: key);
 
   @override
@@ -35,12 +41,19 @@ class CustomDrawer extends StatelessWidget {
                 'assets/images/home.png',
               ),
               onTap: () {
-                Navigator.pop(context);
+                if (currentPage != 'home') {
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                      (route) => false);
+                }
               },
             ),
             Padding(
-              padding: const EdgeInsets.only(left:45 ),
-              child: Divider(height: 1,color: Colors.white,),
+              padding: const EdgeInsets.only(left: 45),
+              child: Divider(
+                height: 1,
+                color: Colors.white,
+              ),
             ),
             ListTile(
               title: Text(
@@ -53,8 +66,11 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {},
             ),
             Padding(
-              padding: const EdgeInsets.only(left:45 ),
-              child: Divider(height: 1,color: Colors.white,),
+              padding: const EdgeInsets.only(left: 45),
+              child: Divider(
+                height: 1,
+                color: Colors.white,
+              ),
             ),
             ListTile(
               title: Text(
@@ -64,11 +80,19 @@ class CustomDrawer extends StatelessWidget {
               leading: Image.asset(
                 'assets/images/search.png',
               ),
-              onTap: () {},
+              onTap: () {
+                if (currentPage != 'log') {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => TicketLogScreen()));
+                }
+              },
             ),
             Padding(
-              padding: const EdgeInsets.only(left:45 ),
-              child: Divider(height: 1,color: Colors.white,),
+              padding: const EdgeInsets.only(left: 45),
+              child: Divider(
+                height: 1,
+                color: Colors.white,
+              ),
             ),
             ListTile(
               title: Text(
@@ -78,11 +102,18 @@ class CustomDrawer extends StatelessWidget {
               leading: Image.asset(
                 'assets/images/logout.png',
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                    (route) => false);
+              },
             ),
             Padding(
-              padding: const EdgeInsets.only(left:45 ),
-              child: Divider(height: 1,color: Colors.white,),
+              padding: const EdgeInsets.only(left: 45),
+              child: Divider(
+                height: 1,
+                color: Colors.white,
+              ),
             ),
           ],
         ),

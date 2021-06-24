@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'constants/colors.dart';
+import 'input_validation/login_validation.dart';
 import 'ui/screens/auth/login_screen.dart';
 import 'view_models/event_viewmodel.dart';
 
@@ -15,8 +16,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [Provider(create: (_) => EventsViewModel()),
-        Provider(create: (_) => TicketStatusViewModel())],
+      providers: [
+        Provider(create: (_) => EventsViewModel()),
+        Provider(create: (_) => TicketStatusViewModel()),
+        ChangeNotifierProvider(
+          create: (_) => LoginValidation(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Eventeno',

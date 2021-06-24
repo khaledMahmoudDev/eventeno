@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(isHome: true,title: 'Home',),
-      endDrawer: CustomDrawer(),
+      endDrawer: CustomDrawer(currentPage: 'home',),
       body: HomeBody(),
     );
   }

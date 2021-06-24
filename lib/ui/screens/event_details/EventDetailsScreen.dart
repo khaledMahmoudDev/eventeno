@@ -17,7 +17,7 @@ class EventDetailsScreen extends StatelessWidget {
         isHome: false,
         title: selectedEvent.title,
       ),
-      endDrawer: CustomDrawer(),
+      endDrawer: CustomDrawer(currentPage: 'eventDetails',),
       body: EventDetailsBody(
         selectedEvent: selectedEvent,
       ),
