@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class DropDownField extends StatelessWidget {
   final String title;
   final Function onTap;
-  const DropDownField({Key key, this.title, this.onTap}) : super(key: key);
+  final String selectedItem;
+
+  const DropDownField({Key key, this.title, this.onTap, this.selectedItem}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,7 @@ class DropDownField extends StatelessWidget {
             children: [
               Text(title),
               Spacer(),
+              Text(selectedItem),
               Icon(Icons.arrow_drop_down),
             ],
           ),

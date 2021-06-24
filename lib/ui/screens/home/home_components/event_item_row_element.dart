@@ -64,6 +64,7 @@ class EventItemRowElement extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 25, left: 25, bottom: 30),
                 child: CustomButtonWithIcon(
                   title: 'Details',
+                  enabled: true,
                   buttonIcon: Icon(
                     Icons.info,
                     color: Colors.white,

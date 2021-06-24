@@ -1,3 +1,4 @@
+import 'package:eventeno/view_models/status_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [Provider(create: (_) => EventsViewModel())],
+      providers: [Provider(create: (_) => EventsViewModel()),
+        Provider(create: (_) => TicketStatusViewModel())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Eventeno',
